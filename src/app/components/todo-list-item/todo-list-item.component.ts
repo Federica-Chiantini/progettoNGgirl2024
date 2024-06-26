@@ -12,4 +12,18 @@ export class TodoListItemComponent {
   todo ? : DatoToDo;
 
   constructor(public tdservice : TodoService){}
+
+  isEdit : boolean = false
+
+  edit(){
+    this.isEdit = !this.isEdit
+  }
+
+  cambioTitolo(input : HTMLInputElement){
+    this.todo!.title = input.value
+    this.edit()
+    const cambionome = this.tdservice.LISTATODO.map(item => item.id === this.todo!.id ? {...item, title : input.value}: item) //... spread operator
+    this.tdservice.LISTATODO = cambionome 
+    this.tdservice.AggiungiLStorage()
+  }
 }

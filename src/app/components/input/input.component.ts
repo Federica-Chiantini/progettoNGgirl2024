@@ -16,7 +16,6 @@ export class InputComponent {
   item  : EventEmitter<DatoToDo> = new EventEmitter()
 
   getTask(){
-    console.log("this.inputNuovo", this.inputNuovo)
     this.item?.emit({title: this.inputNuovo, id: new Date().getTime(), status: false})
     this.inputNuovo = ""
   }
