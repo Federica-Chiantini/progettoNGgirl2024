@@ -1,0 +1,5 @@
+<li class="list-group-item" *ngIf="todo">
+    <input type="checkbox" [checked]="todo.status" (click)="tdservice.CambioStatus(todo.id)">
+    {{todo.title}} 
+    <button type="button" class="btn btn-danger" (click)="tdservice.EliminaTodoItem(todo)">Elimina</button>
+</li>
