@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output} from '@angular/core';
-import { DatoToDo } from '../../models/tipi';
+import { ToDoData } from '../../models/tipi';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class InputComponent {
   inputNuovo : string = ""
 
   @Output()
-  item  : EventEmitter<DatoToDo> = new EventEmitter()
+  item  : EventEmitter<ToDoData> = new EventEmitter()
 
   getTask(){
     this.item?.emit({title: this.inputNuovo, id: new Date().getTime(), status: false})

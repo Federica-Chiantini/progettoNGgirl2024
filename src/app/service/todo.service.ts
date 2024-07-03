@@ -1,46 +1,42 @@
 import { Injectable } from '@angular/core';
-import { DatoToDo } from '../models/tipi';
+import { ToDoData } from '../models/tipi';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-LISTATODO : DatoToDo[] = this.prendiDatidaLStorage()
+TODOLIST : ToDoData[] = this.TakeDatasFromLocalStorage()
 
-  constructor() {
-  }
-
-  prendiDatidaLStorage(){
-    const locStorage = localStorage.getItem("todolist")
-    const arra = JSON.parse(locStorage || "")
-    return arra
+TakeDatasFromLocalStorage(){
+    const LocStorage = localStorage.getItem("todolist")
+    const arrayLocStorage = JSON.parse(LocStorage || "")
+    return arrayLocStorage
   }
 
   getTodoList(){
-    return this.LISTATODO
+    return this.TODOLIST
   }
 
-  EliminaTodoItem(item : DatoToDo){
-    let index = this.LISTATODO.indexOf(item)
-
-    this.LISTATODO.splice(index , 1)
-    this.AggiungiLStorage()
-
+  DeleteTodoItem(item : ToDoData){
+    let index = this.TODOLIST.indexOf(item)
+    this.TODOLIST.splice(index , 1)
+    this.AddToLocalStorage()
   }
 
-  AggiungiTodoItem(item : DatoToDo){
-    this.LISTATODO.push(item)
-    this.AggiungiLStorage()
+  AddTodoItem(item : ToDoData){
+    this.TODOLIST.push(item)
+    this.AddToLocalStorage()
   }
 
-  CambioStatus(id : number){
-    this.LISTATODO = this.LISTATODO.map((td) => {return td.id === id ? {...td, status: !td.status} : td})
-    this.AggiungiLStorage()
+  ChangeStatus(id : number){
+    this.TODOLIST = this.TODOLIST.map((td) => {return td.id === id ? {...td, status: !td.status} : td})
+    this.AddToLocalStorage()
+    console.log(this.TODOLIST)
   }
 
-  AggiungiLStorage(){
-    localStorage.setItem("todolist", JSON.stringify(this.LISTATODO))
+  AddToLocalStorage(){
+    localStorage.setItem("todolist", JSON.stringify(this.TODOLIST))
   }
 
 }

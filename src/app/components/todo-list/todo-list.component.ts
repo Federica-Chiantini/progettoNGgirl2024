@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { TodoService} from '../../service/todo.service';
-import { DatoToDo } from '../../models/tipi';
+import { ToDoData } from '../../models/tipi';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,7 +8,7 @@ import { DatoToDo } from '../../models/tipi';
   styleUrl: './todo-list.component.css'
 })
 export class TodoListComponent{
-  listaDati : DatoToDo [] = []
+  listaDati : ToDoData [] = []
 
 constructor(private service : TodoService){
   this.listaDati = this.service.getTodoList()

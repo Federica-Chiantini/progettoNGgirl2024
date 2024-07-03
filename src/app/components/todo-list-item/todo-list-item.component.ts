@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DatoToDo } from '../../models/tipi';
+import { ToDoData } from '../../models/tipi';
 import { TodoService } from '../../service/todo.service';
 
 @Component({
@@ -9,21 +9,22 @@ import { TodoService } from '../../service/todo.service';
 })
 export class TodoListItemComponent {
   @Input()
-  todo ? : DatoToDo;
+  todo ? : ToDoData;
 
   constructor(public tdservice : TodoService){}
 
   isEdit : boolean = false
 
-  edit(){
+  EditStatusTitle(){
     this.isEdit = !this.isEdit
   }
 
-  cambioTitolo(input : HTMLInputElement){
+  ChangeTitle(input : HTMLInputElement){
     this.todo!.title = input.value
-    this.edit()
-    const cambionome = this.tdservice.LISTATODO.map(item => item.id === this.todo!.id ? {...item, title : input.value}: item) //... spread operator
-    this.tdservice.LISTATODO = cambionome 
-    this.tdservice.AggiungiLStorage()
+    this.EditStatusTitle()
+    const cambionome = this.tdservice.TODOLIST.map(item => item.id === this.todo!.id ? {...item, title : input.value}: item) //... spread operator
+    this.tdservice.TODOLIST = cambionome 
+    this.tdservice.AddToLocalStorage()
   }
+
 }

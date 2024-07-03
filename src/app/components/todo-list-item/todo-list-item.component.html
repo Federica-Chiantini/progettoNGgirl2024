@@ -1,10 +1,10 @@
 <li class="list-group-item" *ngIf="todo">
-    <input type="checkbox" [checked]="todo.status" (click)="tdservice.CambioStatus(todo.id)">
+    <input type="checkbox" [checked]="todo.status" (click)="tdservice.ChangeStatus(todo.id)" #checked>
     <!-- {{todo.title}}  -->
-    <span (click)="edit()" *ngIf="!isEdit">{{todo.title}}</span>
+    <span (click)="EditStatusTitle()" *ngIf="!isEdit">{{todo.title}}</span>
     <div  *ngIf="isEdit">
     <input type="text" [value]="todo.title" #item>
-    <button type="button" class="btn btn-success" (click)="cambioTitolo(item)">Salva</button>
+    <button type="button" class="btn btn-success" (click)="ChangeTitle(item)">Salva</button>
     </div>
-    <button type="button" class="btn btn-danger" (click)="tdservice.EliminaTodoItem(todo)">Elimina</button>
+    <button type="button" class="btn btn-danger" (click)="tdservice.DeleteTodoItem(todo)">Elimina</button>
 </li>
