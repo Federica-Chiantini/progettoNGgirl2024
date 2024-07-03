@@ -32,7 +32,7 @@ TakeDatasFromLocalStorage(){
   ChangeStatus(id : number){
     this.TODOLIST = this.TODOLIST.map((td) => {return td.id === id ? {...td, status: !td.status} : td})
     this.AddToLocalStorage()
-    console.log(this.TODOLIST)
+    //console.log(this.TODOLIST)
   }
 
   AddToLocalStorage(){

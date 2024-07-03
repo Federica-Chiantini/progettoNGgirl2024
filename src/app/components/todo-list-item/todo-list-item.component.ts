@@ -27,4 +27,8 @@ export class TodoListItemComponent {
     this.tdservice.AddToLocalStorage()
   }
 
+  CompletedTask(){
+    return this.todo!.status ? 'text-decoration-line-through' : ''
+  }
+
 }

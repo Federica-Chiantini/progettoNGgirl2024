@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { TodoService} from '../../service/todo.service';
 import { ToDoData } from '../../models/tipi';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,11 +9,16 @@ import { ToDoData } from '../../models/tipi';
   styleUrl: './todo-list.component.css'
 })
 export class TodoListComponent{
-  listaDati : ToDoData [] = []
+  DataList : ToDoData [] = []
 
 constructor(private service : TodoService){
-  this.listaDati = this.service.getTodoList()
+  this.DataList = this.service.getTodoList()
 }
+
+reload(){
+  window.location.reload()
+}
+
 
 
 }

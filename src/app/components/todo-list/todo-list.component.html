@@ -1,3 +1,7 @@
 <ul class="list-group mt-4">
-    <app-todo-list-item *ngFor="let t of listaDati" [todo]="t"></app-todo-list-item>
+    <app-todo-list-item *ngFor="let t of DataList" [todo]="t"></app-todo-list-item>
   </ul>
+  <div class="mt-4 d-flex">
+  <h5>Checked the completed tasks and click on the button</h5>
+  <button type="button" class="btn btn-primary ms-2" (click)="reload()">Save changes</button>
+</div>

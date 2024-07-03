@@ -10,13 +10,13 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule]
 })
 export class InputComponent {
-  inputNuovo : string = ""
+  NewInput : string = ""
 
   @Output()
   item  : EventEmitter<ToDoData> = new EventEmitter()
 
-  getTask(){
-    this.item?.emit({title: this.inputNuovo, id: new Date().getTime(), status: false})
-    this.inputNuovo = ""
+  getNewTask(){
+    this.item?.emit({title: this.NewInput, id: new Date().getTime(), status: false})
+    this.NewInput = ""
   }
 }
