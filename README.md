@@ -28,6 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ------------------------------------------------------------------
 EXPLAINING THE CODE:
+
 🇮🇹 ITALIAN: Progetto su una Todo-list che permetta di aggiungere, modificare e rimuovere delle voci e che questi cambiamenti rimangano salvati nel Local Storage.
 
 ✏️ GRAFICA e STRUTTURA: Il sito risponde bene nella sua semplicita', utilizzando le classi Bootstrap per creare un interfaccia molto semplice e responsive. E' formata da un titolo, input con pulsante per inserire la nuova voce, la lista sottostante con una piccola checkbox per ciascun elemento, e un messaggio finale con un bottone per aggiornare lo stato della lista. 
