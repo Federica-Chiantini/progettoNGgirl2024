@@ -26,7 +26,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
-------------------------------------------------------------------
+---------------
+![show the homepage](src/todo-list.png)
+
 EXPLAINING THE CODE:
 
 🇮🇹 ITALIAN: Progetto su una Todo-list che permetta di aggiungere, modificare e rimuovere delle voci e che questi cambiamenti rimangano salvati nel Local Storage.
